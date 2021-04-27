@@ -59,3 +59,13 @@ CREATE TABLE `dad_has_skill`
     CONSTRAINT `dad_has_skill_FK_skill`
         FOREIGN KEY (`skill_id`) REFERENCES `skill` (`id`)
 );
+
+GRANT SELECT, INSERT, UPDATE
+ON `rent_a_dad`.*
+TO `granddad`
+IDENTIFIED BY 'gri11m4st3r';
+
+GRANT SELECT
+ON `rent_a_dad`.*
+TO `client`
+IDENTIFIED BY 'likefatherlikeson';

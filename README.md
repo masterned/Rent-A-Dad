@@ -39,7 +39,7 @@ We want to make sure your dad is a perfect match.
         * [x] create tables
         * [ ] insert data
         * [x] drop old database
-        * [ ] permissions granted
+        * [x] permissions granted
         * [ ] can be imported into phpMyAdmin
 * [ ] PHP server-side processing
 * [ ] only Twig for templates
