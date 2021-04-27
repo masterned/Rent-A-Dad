@@ -30,15 +30,15 @@ We want to make sure your dad is a perfect match.
 
 ## TODO
 * [ ] database-driven
-    * [ ] MariaDB database
-    * [ ] minimum 3 tables
-        * [ ] customer table
-        * [ ] service table
-        * [ ] ordered-service table
+    * [x] MariaDB database
+    * [x] minimum 3 tables
+        * [x] customer table
+        * [x] service table
+        * [x] ordered-service table
     * [ ] SQL script
-        * [ ] create tables
+        * [x] create tables
         * [ ] insert data
-        * [ ] drop old database
+        * [x] drop old database
         * [ ] permissions granted
         * [ ] can be imported into phpMyAdmin
 * [ ] PHP server-side processing
