@@ -29,7 +29,7 @@ We have a long list of dads to choose from and will set up an interview with you
 We want to make sure your dad is a perfect match.
 
 ## TODO
-* [ ] database-driven
+* [x] database-driven
     * [x] MariaDB database
     * [x] minimum 3 tables
         * [x] customer table
@@ -37,10 +37,10 @@ We want to make sure your dad is a perfect match.
         * [x] ordered-service table
     * [ ] SQL script
         * [x] create tables
-        * [ ] insert data
+        * [x] insert data
         * [x] drop old database
         * [x] permissions granted
-        * [ ] can be imported into phpMyAdmin
+        * [x] can be imported into phpMyAdmin
 * [ ] PHP server-side processing
 * [ ] only Twig for templates
 * [ ] (optional) front-end framework (Bootstrap)
