@@ -11,6 +11,7 @@ class Controller
     public function __construct()
     {
         // setup connection
+        Utils::setupConnection();
 
         $loader = new Twig\Loader\FilesystemLoader('./view');
         $this->twig = new Twig\Environment($loader);

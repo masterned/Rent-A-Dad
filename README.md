@@ -58,7 +58,7 @@ We want to make sure your dad is a perfect match.
 * [ ] separation of concerns
 * [ ] folder structure
 * [ ] clean format
-* [ ] https
+* [x] enforce https
 * [ ] password encryption
 * [ ] intuitive navigation
 * [ ] functions properly in any subfolder of htdocs

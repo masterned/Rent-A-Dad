@@ -10,8 +10,20 @@ class Utils
             ?? '';
     }
 
-    public static function startSession()
+    /**
+     * Ensures a secure connection and starts the session
+     */
+    public static function setupConnection()
     {
+        $https = filter_input(INPUT_SERVER, 'HTTPS');
+        if (!$https) {
+            $host = filter_input(INPUT_SERVER, 'HTTP_HOST');
+            $uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
+            $url = 'https://' . $host . $uri;
+            header("Location: " . $url);
+            exit();
+        }
+
         session_set_cookie_params(
             0,                  // lifetime - ends when the user closes the browser
             self::PROJECT_PATH  // path
