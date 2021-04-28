@@ -16,6 +16,14 @@
     </div>
 
     <div>
-        <input type="submit" name="action" value="Register Client">
+        <label for="confirmation_password">Confirm Password:</label>
+        <input type="password" name="confirmation_password" id="confirmation_password">
+        {% if confirmation_password_error is not empty %}
+            <span class="error">{{ confirmation_password_error|e }}</span>
+        {% endif %}
+    </div>
+
+    <div>
+        <input type="submit" name="action" value="Register">
     </div>
 </form>

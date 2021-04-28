@@ -27,16 +27,6 @@ class Controller
         $this->action = Utils::getAction();
     }
 
-    public function invoke()
-    {
-        match ($this->action) {
-            'Home' => $this->showHomePage(),
-            'Show Registration' => $this->showRegistrationPage(),
-            'Register Client' => $this->registerClient(),
-            default => $this->showHomePage()
-        };
-    }
-
     private function connectToDatabase()
     {
         $this->db = new Database();
@@ -47,16 +37,28 @@ class Controller
         }
     }
 
+    public function invoke()
+    {
+        match ($this->action) {
+            'Home' => $this->showHomePage(),
+            'Show Registration' => $this->showRegistrationPage(),
+            'Register' => $this->registerClient(),
+            default => $this->showHomePage()
+        };
+    }
+
+
     private function showHomePage()
     {
         echo $this->twig->load('home.twig')->render();
     }
 
-    private function showRegistrationPage($username_error = '', $password_error = '')
+    private function showRegistrationPage($username_error = '', $password_error = '', $confirmation_password_error = '')
     {
         echo $this->twig->load('registration.twig')->render([
             'username_error' => $username_error,
-            'password_error' => $password_error
+            'password_error' => $password_error,
+            'confirmation_password_error' => $confirmation_password_error
         ]);
     }
 
@@ -64,12 +66,14 @@ class Controller
     {
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
+        $confirmation_password = filter_input(INPUT_POST, 'confirmation_password');
 
         $username_error = Validator::checkText($username);
         $password_error = Validator::checkText($password);
+        $confirmation_password_error = $confirmation_password != $password ? 'Passwords do not match' : '';
 
-        if (!empty($username_error) || !empty($password_error)) {
-            $this->showRegistrationPage($username_error, $password_error);
+        if (!empty($username_error) || !empty($password_error) || !empty($confirmation_password_error)) {
+            $this->showRegistrationPage($username_error, $password_error, $confirmation_password_error);
             return;
         }
 
