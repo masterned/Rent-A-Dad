@@ -2,14 +2,20 @@
     <div>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
+        {% if username_error is not empty %}
+            <span class="error">{{ username_error|e }}</span>
+        {% endif %}
     </div>
 
     <div>
         <label for="password">Password:</label>
         <input type="password" name="password" id="password">
+        {% if password_error is not empty %}
+            <span class="error">{{ password_error|e }}</span>
+        {% endif %}
     </div>
 
     <div>
-        <input type="submit" name="action" value="Register User">
+        <input type="submit" name="action" value="Register Client">
     </div>
 </form>

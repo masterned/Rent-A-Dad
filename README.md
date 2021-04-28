@@ -46,18 +46,17 @@ We want to make sure your dad is a perfect match.
     * [x] utility class
     * [x] controller connection
     * [x] error message display
-* [ ] validator
-    * [ ] utility class
-    * [ ] controller connection
+* [x] validator
+    * [x] utility class
+    * [x] controller connection
 * [ ] pages
     * [ ] registration
         * [x] view
         * [ ] validation
             * [ ] pattern
-            * [ ] feedback
+            * [x] feedback
         * [ ] model
-        * [ ] routing
-        * [ ] controller
+        * [x] routing
     * [ ] login
         * [ ] view
         * [ ] validation
