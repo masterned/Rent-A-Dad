@@ -5,9 +5,12 @@ USE `rent_a_dad`;
 -- Create tables
 CREATE TABLE `client`
 (
-    `id`        INT             NOT NULL    AUTO_INCREMENT,
-    `username`  VARCHAR(255)    NOT NULL    UNIQUE,
-    `password`  VARCHAR(255)    NOT NULL,
+    `id`            INT             NOT NULL    AUTO_INCREMENT,
+    `username`      VARCHAR(255)    NOT NULL    UNIQUE,
+    `password`      VARCHAR(255)    NOT NULL,
+    `first_name`    VARCHAR(255)    NOT NULL,
+    `last_name`     VARCHAR(255)    NOT NULL,
+    `email`         VARCHAR(255)    NOT NULL,
 
     PRIMARY KEY (`id`)
 );
@@ -60,8 +63,8 @@ CREATE TABLE `dad_has_skill`
 
 -- Insert data
 INSERT INTO `client` VALUES
-(1, 'TestUsername', 'TestPassword'),
-(2, 'InvalidUser' , 'NotEncrypted');
+(1, 'TestUsername', 'TestPassword', 'Test'   , 'User', 'test@test.com'),
+(2, 'InvalidUser' , 'NotEncrypted', 'Invalid', 'User', 'invalid@test.com');
 
 INSERT INTO `dad` VALUES
 (1, 'Michael', 'McMichaels', 52, 'Father of 3. Will treat your children like his own', 4.5),
@@ -104,15 +107,6 @@ ON *.*
 TO `granddad`@`localhost`
 IDENTIFIED BY 'gri11m4st3r';
 
-GRANT SELECT, INSERT, UPDATE
+GRANT SELECT, INSERT, UPDATE, DELETE
 ON `rent_a_dad`.*
 TO `granddad`@`localhost`;
-
-GRANT USAGE
-ON *.*
-TO `client`@`localhost`
-IDENTIFIED BY 'likefatherlikeson';
-
-GRANT SELECT
-ON `rent_a_dad`.*
-TO `client`@`localhost`;
