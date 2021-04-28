@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include 'shared/head.twig' %}
+
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+	</head>
+	<body>
+		<header>
+            {% block header %}
+                <h1>Rent-A-Dad</h1>
+            {% endblock %}
+			
+			{% include 'shared/navigation.twig' %}
+		</header>
+		<main>
+			{% block content %}{% endblock %}
+		</main>
+		<footer>{% include 'shared/footer.twig' %}</footer>
+	</body>
+
+</html>

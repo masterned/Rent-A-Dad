@@ -1,0 +1,33 @@
+<nav>
+	<ul>
+		<li>
+			<a href=".?action=Home">Home</a>
+		</li>
+		<li>
+			<a href=".?action=Our Services">Our Services</a>
+		</li>
+	</ul>
+	<ul>
+		{% if session.is_valid_user is defined %}
+			<li>
+				<a href=".?action=View Available Dads">View Available Dads</a>
+			</li>
+			<li>
+				<a href=".?action=My Dads">My Dads</a>
+			</li>
+			<li>
+				<a href=".?action=Logout">Logout</a>
+			</li>
+		{% else %}
+			<li>
+				<a href=".?action=Meet Our Dads">Meet Some of Our Dads</a>
+			</li>
+			<li>
+				<a href=".?action=Show Registration">Create an Account</a>
+			</li>
+			<li>
+				<a href=".?action=Show Login">Login</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>
