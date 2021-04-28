@@ -1,4 +1,13 @@
 # Rent-A-Dad
+
+## To Dr. Remshagen
+In order to update the project path (root),
+go to utils/Utils.php and change the constant `PROJECT_PATH`.
+
+Also, please make sure your SQL database is up to date.
+I had been running into a weird bug before I updated mine,
+and updating it seems to have fixed it.
+
 ## Who are we?
 Ever have a man in your life that captures the essence of what it means to be "dad"?
 
