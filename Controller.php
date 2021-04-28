@@ -26,6 +26,7 @@ class Controller
     {
         match ($this->action) {
             'Home' => $this->showHomePage(),
+            'Show Registration' => $this->showRegistrationPage(),
             default => $this->showHomePage()
         };
     }
@@ -33,5 +34,10 @@ class Controller
     private function showHomePage()
     {
         echo $this->twig->load('home.twig')->render();
+    }
+
+    private function showRegistrationPage()
+    {
+        echo $this->twig->load('registration.twig')->render();
     }
 }
