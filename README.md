@@ -38,31 +38,51 @@ We have a long list of dads to choose from and will set up an interview with you
 We want to make sure your dad is a perfect match.
 
 ## TODO
-* [x] create & test db creation script
-* [ ] create registration page
-    * [ ] view
-    * [ ] model
-    * [ ] routing
-    * [ ] controller
-* [ ] create dad list page
-    * [ ] view
-    * [ ] model
-    * [ ] routing
-    * [ ] controller
-* [ ] create dad rent page
-    * [ ] view
-    * [ ] model
-    * [ ] routing
-    * [ ] controller
-* [ ] authentication
-    * [ ] for ordering and reviewing services
-    * [ ] logout - removes all session data
-* [ ] data validation
-    * [ ] proper feedback
-    * [ ] all type requirements validated
-* [x] enforce https
-* [x] (if use absolute path) single location to change root
-* [ ] session tracking
-* [ ] password encryption
-* [ ] intuitive navigation
+* [x] db
+    * [x] creation script
+        * [x] tables
+        * [x] data
+        * [x] credentials
+    * [x] utility class
+    * [x] controller connection
+    * [x] error message display
+* [ ] validator
+    * [ ] utility class
+    * [ ] controller connection
+* [ ] pages
+    * [ ] registration
+        * [x] view
+        * [ ] validation
+            * [ ] pattern
+            * [ ] feedback
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
+    * [ ] login
+        * [ ] view
+        * [ ] validation
+            * [ ] pattern
+            * [ ] feedback
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
+    * [ ] review services
+        * [ ] view
+        * [ ] authentication
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
+    * [ ] order services
+        * [ ] view
+        * [ ] authentication
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
+* [ ] security
+    * [x] enforce https
+    * [ ] password encryption
+* [x] path
+* [ ] session
+    * [x] start on load
+    * [ ] clean on logout
 * [ ] functions properly in any subfolder of htdocs
