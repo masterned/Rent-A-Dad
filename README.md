@@ -29,38 +29,17 @@ We have a long list of dads to choose from and will set up an interview with you
 We want to make sure your dad is a perfect match.
 
 ## TODO
-* [x] database-driven
-    * [x] MariaDB database
-    * [x] minimum 3 tables
-        * [x] customer table
-        * [x] service table
-        * [x] ordered-service table
-    * [x] SQL script
-        * [x] create tables
-        * [x] insert data
-        * [x] drop old database
-        * [x] permissions granted
-        * [x] can be imported into phpMyAdmin
-* [ ] PHP server-side processing
-* [ ] only Twig for templates
-* [ ] (optional) front-end framework (Bootstrap)
-* [ ] registration
-    * [ ] username
-    * [ ] password
+* [x] create & test db creation script
+* [ ] create registration page
 * [ ] authentication
     * [ ] for ordering and reviewing services
     * [ ] logout - removes all session data
 * [ ] data validation
     * [ ] proper feedback
     * [ ] all type requirements validated
-* [ ] session tracking
-* [ ] MVC pattern
-* [ ] separation of concerns
-* [ ] folder structure
-* [ ] clean format
 * [x] enforce https
+* [x] (if use absolute path) single location to change root
+* [ ] session tracking
 * [ ] password encryption
 * [ ] intuitive navigation
 * [ ] functions properly in any subfolder of htdocs
-* [ ] (if use absolute path) single location to change root
-* [ ] all necessary files included
