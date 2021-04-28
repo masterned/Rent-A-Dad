@@ -31,6 +31,20 @@ We want to make sure your dad is a perfect match.
 ## TODO
 * [x] create & test db creation script
 * [ ] create registration page
+    * [ ] view
+    * [ ] model
+    * [ ] routing
+    * [ ] controller
+* [ ] create dad list page
+    * [ ] view
+    * [ ] model
+    * [ ] routing
+    * [ ] controller
+* [ ] create dad rent page
+    * [ ] view
+    * [ ] model
+    * [ ] routing
+    * [ ] controller
 * [ ] authentication
     * [ ] for ordering and reviewing services
     * [ ] logout - removes all session data
