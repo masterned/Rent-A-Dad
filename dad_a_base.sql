@@ -98,12 +98,20 @@ INSERT INTO `dad_has_skill` VALUES
 (5, 4, 4);
 
 -- Grant permissions
+GRANT USAGE
+ON *.*
+TO `granddad`@`localhost`
+IDENTIFIED BY 'gri11m4st3r';
+
 GRANT SELECT, INSERT, UPDATE
 ON `rent_a_dad`.*
-TO `granddad`
-IDENTIFIED BY 'gri11m4st3r';
+TO `granddad`@`localhost`;
+
+GRANT USAGE
+ON *.*
+TO `client`@`localhost`
+IDENTIFIED BY 'likefatherlikeson';
 
 GRANT SELECT
 ON `rent_a_dad`.*
-TO `client`
-IDENTIFIED BY 'likefatherlikeson';
+TO `client`@`localhost`;

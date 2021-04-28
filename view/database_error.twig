@@ -1,0 +1,15 @@
+{% extends "shared/generic.twig" %}
+
+{% block title 'Rent-A-Dad :: Database Error' %}
+
+{% block content %}
+	<h2>Error 500</h2>
+
+	<p>Something went wrong when trying to connect to the database...</p>
+
+	<p>Maybe it was not turned on?</p>
+
+	<p>Or possibly, it didn't like the credentials?</p>
+
+	<p>{{ error_message }}</p>
+{% endblock %}
