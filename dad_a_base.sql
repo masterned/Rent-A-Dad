@@ -15,7 +15,8 @@ CREATE TABLE `client`
 CREATE TABLE `dad`
 (
     `id`            INT             NOT NULL    AUTO_INCREMENT,
-    `name`          VARCHAR(255)    NOT NULL,
+    `first_name`    VARCHAR(255)    NOT NULL,
+    `last_name`     VARCHAR(255)    NOT NULL,
     `age`           INT             NOT NULL,
     `biography`     VARCHAR(255)    NOT NULL,
     `rate`          DECIMAL(4,2)    NOT NULL,
@@ -63,11 +64,11 @@ INSERT INTO `client` VALUES
 (2, 'InvalidUser' , 'NotEncrypted');
 
 INSERT INTO `dad` VALUES
-(1, 'Michael', 52, 'Father of 3. Will treat your children like his own', 4.5),
-(2, 'Sam'    , 56, 'Has 2 daughters. Tenderhearted and thoughtful'     , 3.0),
-(3, 'Bennie' , 54, 'Dad of 3, knowledgeable and resourceful'           , 5.0),
-(4, 'John'   , 57, 'Father of 1, quirky and kindhearted'               , 3.5),
-(5, 'Dexter' , 63, 'Hilarious genius'                                  , 4.5);
+(1, 'Michael', 'McMichaels', 52, 'Father of 3. Will treat your children like his own', 4.5),
+(2, 'Sam'    , 'Sampson'   , 56, 'Has 2 daughters. Tenderhearted and thoughtful'     , 3.0),
+(3, 'Bennie' , 'Brown'     , 54, 'Dad of 3, knowledgeable and resourceful'           , 5.0),
+(4, 'John'   , 'Johnson'   , 57, 'Father of 1, quirky and kindhearted'               , 3.5),
+(5, 'Dexter' , 'Lab'       , 63, 'Hilarious genius'                                  , 4.5);
 
 INSERT INTO `skill` VALUES
 (1, 'football', 'watch, coach, or play football'),
