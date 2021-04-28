@@ -35,7 +35,7 @@ We want to make sure your dad is a perfect match.
         * [x] customer table
         * [x] service table
         * [x] ordered-service table
-    * [ ] SQL script
+    * [x] SQL script
         * [x] create tables
         * [x] insert data
         * [x] drop old database
