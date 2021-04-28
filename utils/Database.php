@@ -10,8 +10,8 @@ class Database
     public function __construct()
     {
         $dsn = 'mysql:host=localhost;dbname=rent_a_dad';
-        $username = 'client';
-        $password = 'likefatherlikeson';
+        $username = 'granddad';
+        $password = 'gri11m4st3r';
 
         $this->error_message = '';
         try {
