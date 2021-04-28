@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		{% include 'shared/head.twig' %}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{% block styles %}
+			<link rel="stylesheet" href="./view/styles/generic.css">
+		{% endblock %}
 
 		<title>
 			{% block title %}{% endblock %}
@@ -9,10 +14,10 @@
 	</head>
 	<body>
 		<header>
-            {% block header %}
-                <h1>Rent-A-Dad</h1>
-            {% endblock %}
-			
+			{% block header %}
+				<h1>Rent-A-Dad</h1>
+			{% endblock %}
+
 			{% include 'shared/navigation.twig' %}
 		</header>
 		<main>
