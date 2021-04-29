@@ -52,11 +52,12 @@ We want to make sure your dad is a perfect match.
 * [ ] pages
     * [ ] registration
         * [x] view
-        * [ ] validation
-            * [ ] patterns
+        * [x] validation
+            * [x] patterns
             * [x] feedback
         * [ ] model
         * [x] routing
+        * [ ] view & model communication (controller)
     * [ ] login
         * [x] view
         * [ ] validation
@@ -64,6 +65,7 @@ We want to make sure your dad is a perfect match.
             * [x] feedback
         * [ ] model
         * [ ] routing
+        * [ ] view & model communication (controller)
     * [ ] review services
         * [ ] view
         * [ ] authentication
