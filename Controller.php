@@ -4,12 +4,15 @@ require_once 'utils/Utils.php';
 require_once 'utils/Database.php';
 require_once 'utils/Validator.php';
 require_once 'model/Field.php';
+require_once 'model/ClientTable.php';
 
 class Controller
 {
     private $action;
     private $db;
     private $twig;
+
+    private $client_table;
 
     public function __construct()
     {
@@ -23,6 +26,7 @@ class Controller
 
         // connect to database
         $this->connectToDatabase();
+        $this->client_table = new ClientTable($this->db->getDB());
 
         // get action
         $this->action = Utils::getAction();
@@ -80,6 +84,8 @@ class Controller
         $username->value = filter_input(INPUT_POST, 'username');
         Validator::required($username);
         Validator::properLength($username);
+        if ($this->client_table->clientExists($username->value) && !Field::hasError($username))
+            $username->error = 'Username already exists.';
 
         $password = new Field('password', 'password');
         $password->value = filter_input(INPUT_POST, 'password');
@@ -97,7 +103,7 @@ class Controller
         $first_name->value = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
         Validator::required($first_name);
         Validator::properLength($first_name);
-        
+
         $last_name = new Field('last_name');
         $last_name->value = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
         Validator::required($last_name);
@@ -109,35 +115,52 @@ class Controller
         Validator::properLength($email, 1, 50);
         Validator::checkEmail($email);
 
-        if (!Validator::allValid([$username, $password, $confirm_password])) {
-            $password->value = '';
-            $confirm_password->value = '';
+        if (Validator::allValid([$username, $password, $confirm_password, $first_name, $last_name, $email])) {
 
-            $this->showRegistrationPage(
-                $username,
-                $password,
-                $confirm_password,
-                $first_name,
-                $last_name,
-                $email
-            );
+            $this->showHomePage();
             return;
         }
 
-        $this->showHomePage();
+        $password->value = '';
+        $confirm_password->value = '';
+
+        $this->showRegistrationPage(
+            $username,
+            $password,
+            $confirm_password,
+            $first_name,
+            $last_name,
+            $email
+        );
     }
 
-    private function showLoginPage()
+    private function showLoginPage($username = null, $password = null, $login_error = '')
     {
-        $fields = [
-            new Field('username'),
-            new Field('password')
-        ];
-        echo $this->twig->load('login.twig')->render(['fields' => $fields]);
+        echo $this->twig->load('login.twig')->render(['fields' => [
+            $username ?? new Field('username'),
+            $password ?? new Field('password', 'password')
+        ], 'login_error' => $login_error]);
     }
 
     private function loginClient()
     {
-        $this->showHomePage();
+        $username = new Field('username');
+        $username->value = filter_input(INPUT_POST, 'username');
+        Validator::required($username);
+
+        $password = new Field('password', 'password');
+        $password->value = filter_input(INPUT_POST, 'password');
+        Validator::required($password);
+
+        $login_error = '';
+        if (!$this->client_table->isValidLogin($username->value, $password->value))
+            $login_error = 'Username or password was not recognized';
+
+        if (Validator::allValid([$username, $password]) && $login_error === '') {
+            $this->showHomePage();
+            return;
+        }
+        
+        $this->showLoginPage($username, $password, $login_error);
     }
 }

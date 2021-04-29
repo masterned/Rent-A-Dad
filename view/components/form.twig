@@ -6,4 +6,8 @@
 	<div>
 		<input type="submit" name="action" value="{{ button_value }}">
 	</div>
+
+	{% if form_error is defined and form_error is not empty %}
+		<p class="error">{{ form_error }}</p>
+	{% endif %}
 </form>
