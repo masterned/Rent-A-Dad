@@ -16,4 +16,8 @@ class Field
         $this->error = '';
         $this->value = '';
     }
+
+    public static function hasError(Field $field) {
+        return !empty($field->error);
+    }
 }

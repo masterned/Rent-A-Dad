@@ -93,14 +93,18 @@ class Controller
         $first_name = new Field('first_name');
         $first_name->value = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
         Validator::required($first_name);
-
+        Validator::properLength($first_name);
+        
         $last_name = new Field('last_name');
         $last_name->value = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
         Validator::required($last_name);
+        Validator::properLength($last_name);
 
-        $email = new Field('email', 'email');
+        $email = new Field('email');
         $email->value = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         Validator::required($email);
+        Validator::properLength($email, 1, 50);
+        Validator::checkEmail($email);
 
         if (!Validator::allValid([$username, $password, $confirm_password])) {
             $password->value = '';
