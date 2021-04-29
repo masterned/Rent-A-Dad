@@ -1,0 +1,9 @@
+<form action="." method="POST">
+	{% for field in fields %}
+		{% include 'components/form_field.twig' %}
+	{% endfor %}
+
+	<div>
+		<input type="submit" name="action" value="{{ button_value }}">
+	</div>
+</form>

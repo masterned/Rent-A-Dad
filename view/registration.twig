@@ -1,8 +1,9 @@
-{% extends "shared/generic.twig" %}
+{% extends 'shared/generic.twig' %}
 
 {% block title 'Rent-A-Dad :: Create an Account' %}
 
 {% block content %}
-    <h2>Create an Account</h2>
-    {% include('./components/registration_form.twig') %}
+	<h2>Create an Account</h2>
+    {% set button_value = 'Register' %}
+	{% include('components/form.twig') %}
 {% endblock %}

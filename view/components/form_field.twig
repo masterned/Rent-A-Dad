@@ -1,0 +1,9 @@
+<div>
+	<label for="{{ field.name|e }}">{{ field.name|split('_')|join(' ')|title }}:</label>
+
+	<input type="{{ field.type|e }}" name="{{ field.name|e }}" id="{{ field.name|e }}" value="{{ field.value|e }}">
+	
+    {% if field.error is not empty %}
+		<span class="error">{{ field.error|e }}</span>
+	{% endif %}
+</div>
