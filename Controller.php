@@ -85,6 +85,9 @@ class Controller
         $password->value = filter_input(INPUT_POST, 'password');
         Validator::required($password);
         Validator::properLength($password, 8, 20);
+        Validator::matchPattern($password, '/^(?=.*[[:upper:]])(?=.*[[:lower:]]).*$/', 'Must contain an uppercase and lowercase letter.');
+        Validator::matchPattern($password, '/^(?=.*[[:digit:]]).*$/', 'Must contain a number.');
+        Validator::matchPattern($password, '/^(?=.*[!@#$%^&*]).*$/', 'Must contain a symbol (!@#$%^&*).');
 
         $confirm_password = new Field('confirm_password', 'password');
         $confirm_password->value = filter_input(INPUT_POST, 'confirm_password');
