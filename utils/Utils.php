@@ -24,10 +24,10 @@ class Utils
             exit();
         }
 
-        session_set_cookie_params(
-            0,                  // lifetime - ends when the user closes the browser
-            self::PROJECT_PATH  // path
-        );
+        // session_set_cookie_params(
+        //     0,                  // lifetime - ends when the user closes the browser
+        //     self::PROJECT_PATH  // path
+        // );
 
         session_start();
     }

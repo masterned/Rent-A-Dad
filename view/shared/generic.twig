@@ -19,6 +19,11 @@
 			{% endblock %}
 
 			{% include 'shared/navigation.twig' %}
+
+			{% if session.is_valid_user %}
+				<div>You are currently logged in as {{ session.username|e }}.</div>
+			{% endif %}
+			
 		</header>
 		<main>
 			{% block content %}{% endblock %}

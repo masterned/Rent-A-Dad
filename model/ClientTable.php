@@ -38,6 +38,16 @@ class ClientTable
 
     public function addClient($username, $password, $first_name, $last_name, $email)
     {
-
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $query = 'INSERT INTO `client` (`username`, `password`, `first_name`, `last_name`, `email`)
+                  VALUES (:username, :password, :first_name, :last_name, :email)';
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':username', $username);
+        $statement->bindValue(':password', $hash);
+        $statement->bindValue(':first_name', $first_name);
+        $statement->bindValue(':last_name', $last_name);
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        $statement->closeCursor();
     }
 }

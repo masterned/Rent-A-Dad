@@ -117,7 +117,12 @@ class Controller
 
         if (Validator::allValid([$username, $password, $confirm_password, $first_name, $last_name, $email])) {
 
-            $this->showHomePage();
+            $this->client_table->addClient($username->value, $password->value, $first_name->value, $last_name->value, $email->value);
+
+            $_SESSION['is_valid_user'] = true;
+            $_SESSION['username'] = $username->value;
+
+            header("Location: .?action=Home");
             return;
         }
 
@@ -157,10 +162,14 @@ class Controller
             $login_error = 'Username or password was not recognized';
 
         if (Validator::allValid([$username, $password]) && $login_error === '') {
-            $this->showHomePage();
+
+            $_SESSION['is_valid_user'] = true;
+            $_SESSION['username'] = $username->value;
+
+            header("Location: .?action=Home");
             return;
         }
-        
+
         $this->showLoginPage($username, $password, $login_error);
     }
 }
