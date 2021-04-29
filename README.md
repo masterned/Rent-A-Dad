@@ -53,35 +53,34 @@ We want to make sure your dad is a perfect match.
     * [ ] registration
         * [x] view
         * [ ] validation
-            * [ ] pattern
+            * [ ] patterns
             * [x] feedback
         * [ ] model
         * [x] routing
     * [ ] login
-        * [ ] view
+        * [x] view
         * [ ] validation
-            * [ ] pattern
-            * [ ] feedback
+            * [ ] verification
+            * [x] feedback
         * [ ] model
         * [ ] routing
-        * [ ] controller
     * [ ] review services
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
-        * [ ] controller
+        * [ ] view & model communication (controller)
     * [ ] order services
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
-        * [ ] controller
+        * [ ] view & model communication (controller)
 * [ ] security
     * [x] enforce https
     * [ ] password encryption
 * [x] path
 * [ ] session
     * [x] start on load
-    * [ ] clean on logout
+    * [ ] clear on logout
 * [ ] functions properly in any subfolder of htdocs
