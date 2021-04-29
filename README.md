@@ -50,37 +50,39 @@ We want to make sure your dad is a perfect match.
     * [x] utility class
     * [x] controller connection
 * [ ] pages
-    * [ ] registration
+    * [x] registration
         * [x] view
         * [x] validation
             * [x] patterns
             * [x] feedback
-        * [ ] model
+        * [x] model
         * [x] routing
-        * [ ] view & model communication (controller)
-    * [ ] login
+        * [x] view & model communication (controller)
+        * [x] session data
+    * [x] login
         * [x] view
-        * [ ] validation
-            * [ ] verification
+        * [x] validation
+            * [x] verification
             * [x] feedback
-        * [ ] model
-        * [ ] routing
-        * [ ] view & model communication (controller)
-    * [ ] review services
+        * [x] model
+        * [x] routing
+        * [x] view & model communication (controller)
+        * [x] session data
+    * [ ] available services
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
         * [ ] view & model communication (controller)
-    * [ ] order services
+    * [ ] services review
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
         * [ ] view & model communication (controller)
-* [ ] security
+* [x] security
     * [x] enforce https
-    * [ ] password encryption
+    * [x] password encryption
 * [x] path
 * [ ] session
     * [x] start on load
