@@ -59,6 +59,7 @@ class Controller
             'Login' => $this->loginClient(),
             'Logout' => $this->logoutUser(),
             'Show Dad Selection' => $this->showDadSelection(),
+            'Rent This Dad' => $this->rentDad(),
             default => $this->showHomePage()
         };
     }
@@ -203,5 +204,9 @@ class Controller
         $dads = $this->dad_table->getAllDads();
 
         echo $this->twig->load('dad_selection.twig')->render(['dads' => $dads]);
+    }
+
+    private function rentDad()
+    {
     }
 }
