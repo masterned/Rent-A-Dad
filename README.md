@@ -98,7 +98,7 @@ We want to make sure your dad is a perfect match.
 
 ## Stretch
 * [x] personalized greeting
-* [ ] 403 Unauthorized
+* [ ] 401 Unauthorized
 * [ ] filter dads by skill
 * [ ] client phone #
 * [ ] interests
