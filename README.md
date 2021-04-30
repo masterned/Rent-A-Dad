@@ -66,25 +66,25 @@ We want to make sure your dad is a perfect match.
             * [x] feedback
         * [x] model
         * [x] routing
-        * [x] view & model communication (controller)
+        * [x] controller
         * [x] session data
     * [x] dad selection
         * [x] view
         * [x] model
         * [x] routing
-        * [x] view & model communication (controller)
+        * [x] controller
+    * [ ] review rented dads
+        * [ ] view
+        * [ ] authentication
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
     * [ ] set appointment
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
         * [ ] controller
-    * [ ] review rented dads
-        * [ ] view
-        * [ ] authentication
-        * [ ] model
-        * [ ] routing
-        * [ ] view & model communication (controller)
 * [x] security
     * [x] enforce https
     * [x] password encryption
