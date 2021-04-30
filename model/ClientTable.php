@@ -56,8 +56,9 @@ class ClientTable
         $query = 'SELECT `first_name` FROM `client` WHERE `username` = :username';
         $statement = $this->db->prepare($query);
         $statement->bindValue(':username', $username);
-        $found_match = $statement->execute();
-        $first_name = $found_match ? $statement->fetch()['first_name'] : 'bud';
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $first_name = $result ? $result['first_name'] : 'bud';
         $statement->closeCursor();
 
         return $first_name;

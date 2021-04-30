@@ -137,7 +137,7 @@ class Controller
             $_SESSION['is_valid_user'] = true;
             $_SESSION['username'] = $username->value;
 
-            header("Location: .?action=Home");
+            header("Location: .?action=Welcome Home");
             return;
         }
 
