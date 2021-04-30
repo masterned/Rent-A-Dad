@@ -73,12 +73,12 @@ We want to make sure your dad is a perfect match.
         * [x] model
         * [x] routing
         * [x] controller
-    * [ ] review rented dads
-        * [ ] view
-        * [ ] authentication
-        * [ ] model
-        * [ ] routing
-        * [ ] controller
+    * [x] review rented dads
+        * [x] view
+        * [x] authentication
+        * [x] model
+        * [x] routing
+        * [x] controller
     * [ ] set appointment
         * [ ] view
         * [ ] authentication
@@ -93,11 +93,13 @@ We want to make sure your dad is a perfect match.
     * [x] start on load
     * [x] clear on logout
 * [ ] functions properly in any subfolder of htdocs
-* [ ] style design
+* [ ] site-wide style
 
-## Stretch
+## Stretch Goals
 * [x] personalized greeting
 * [ ] 401 Unauthorized
+* [ ] 418 I'm a teapot
+* [ ] 500 Internal Server Error
 * [ ] filter dads by skill
 * [ ] client phone #
 * [ ] interests
@@ -106,3 +108,4 @@ We want to make sure your dad is a perfect match.
 * [ ] user preferred site style
 * [ ] account settings
 * [ ] admin login
+* [ ] update appointments
