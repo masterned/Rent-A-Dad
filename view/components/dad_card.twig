@@ -1,0 +1,37 @@
+{% extends 'components/card.twig' %}
+
+{% block card_title %}{{ dad.first_name|e|title }} {{ dad.last_name|e|title }}{% endblock %}
+
+{% block card_body %}
+    <article>{{ dad.biography|e }}</article>
+
+    <aside>
+        <section>
+            <header>Skills</header>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for skill in dad.skills %}
+                        <td>{{ skill.name|e|title }}</td>
+                        <td>{{ skill.description|e }}</td>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </aside>
+{% endblock %}
+
+{% block card_footer %}
+    {% if session.is_valid_user is defined %}
+        <form action="." method="post">
+            <input type="hidden" name="dad_id" value="{{ dad.id }}">
+            <input type="submit" name="action" value="Rent This Dad">
+        </form>
+    {% endif %}
+{% endblock %}

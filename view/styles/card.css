@@ -1,0 +1,21 @@
+.card {
+    min-width: min-content;
+    max-width: max-content;
+    padding: 0.5rem;
+    border: thin solid gray;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px #cccccc;
+}
+
+.card table {
+    border-collapse: collapse;
+}
+
+.card table th,
+.card table td {
+    border: thin solid gray;
+}
+
+.card th {
+    font-weight: normal;
+}

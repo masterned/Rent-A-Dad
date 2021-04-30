@@ -54,6 +54,7 @@ class Controller
             'Show Login' => $this->showLoginPage(),
             'Login' => $this->loginClient(),
             'Logout' => $this->logoutUser(),
+            'Show Dad Selection' => $this->showDadSelection(),
             default => $this->showHomePage()
         };
     }
@@ -191,5 +192,14 @@ class Controller
         session_destroy();
 
         header("Location: .?action=Logout Home");
+    }
+
+    private function showDadSelection()
+    {
+        echo $this->twig->load('dad_selection.twig')->render(['dads' => [
+            ['first_name' => 'Michael', 'last_name' => 'Dent', 'biography' => 'father of 3. son of God.', 'skills' => [
+                ['name' => 'dad', 'description' => 'being a good dad']
+            ]]
+        ]]);
     }
 }
