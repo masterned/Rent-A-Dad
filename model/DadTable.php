@@ -29,7 +29,7 @@ class DadTable
 
         for ($i = 0; $i < count($dads); $i++) {
             $skills = $skill_table->dadHasSkills($dads[$i]['id']);
-            $dads[$i]['skills'] = &$skills;
+            $dads[$i]['skills'] = $skills;
         }
     }
 }
