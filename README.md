@@ -68,19 +68,18 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] view & model communication (controller)
         * [x] session data
-    * [ ] dad selection
+    * [x] dad selection
         * [x] view
-        * [ ] authentication
-        * [ ] model
-        * [ ] routing
-        * [ ] view & model communication (controller)
+        * [x] model
+        * [x] routing
+        * [x] view & model communication (controller)
     * [ ] set appointment
         * [ ] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
         * [ ] controller
-    * [ ] services review
+    * [ ] review rented dads
         * [ ] view
         * [ ] authentication
         * [ ] model
