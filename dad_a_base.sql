@@ -76,7 +76,7 @@ INSERT INTO `dad` VALUES
 INSERT INTO `skill` VALUES
 (1, 'football', 'watch, coach, or play football'),
 (2, 'woodwork', 'build something'),
-(3, 'repair'  , 'fix somthing'),
+(3, 'repair'  , 'fix something'),
 (4, 'math'    , 'tutor math'),
 (5, 'grilling', 'master of meats');
 
