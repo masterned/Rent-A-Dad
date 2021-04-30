@@ -10,9 +10,11 @@
 {% block content %}
     <h2>Dad Selection</h2>
 
-	{% if dads is defined and dads is not empty %}
-		{% for dad in dads %}
-            {% include 'components/dad_card.twig' %}
-        {% endfor %}
-	{% endif %}
+    <div class="selection">
+        {% if dads is defined and dads is not empty %}
+            {% for dad in dads %}
+                {% include 'components/dad_card.twig' %}
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}

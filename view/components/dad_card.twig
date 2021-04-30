@@ -1,6 +1,6 @@
 {% extends 'components/card.twig' %}
 
-{% block card_title %}{{ dad.first_name|e|title }} {{ dad.last_name|e|title }}{% endblock %}
+{% block card_title %}{{ dad.first_name|e }} {{ dad.last_name|e }}{% endblock %}
 
 {% block card_body %}
     <article>{{ dad.biography|e }}</article>
@@ -14,12 +14,16 @@
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Proficiency</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for skill in dad.skills %}
-                        <td>{{ skill.name|e|title }}</td>
-                        <td>{{ skill.description|e }}</td>
+                        <tr>
+                            <td>{{ skill.name|e|title }}</td>
+                            <td>{{ skill.description|e }}</td>
+                            <td>{{ skill.proficiency|e }}</td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>

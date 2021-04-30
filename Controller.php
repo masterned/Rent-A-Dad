@@ -4,7 +4,9 @@ require_once 'utils/Utils.php';
 require_once 'utils/Database.php';
 require_once 'utils/Validator.php';
 require_once 'model/Field.php';
+
 require_once 'model/ClientTable.php';
+require_once 'model/DadTable.php';
 
 class Controller
 {
@@ -13,6 +15,7 @@ class Controller
     private $twig;
 
     private $client_table;
+    private $dad_table;
 
     public function __construct()
     {
@@ -27,6 +30,7 @@ class Controller
         // connect to database
         $this->connectToDatabase();
         $this->client_table = new ClientTable($this->db->getDB());
+        $this->dad_table = new DadTable($this->db->getDB());
 
         // get action
         $this->action = Utils::getAction();
@@ -196,10 +200,8 @@ class Controller
 
     private function showDadSelection()
     {
-        echo $this->twig->load('dad_selection.twig')->render(['dads' => [
-            ['first_name' => 'Michael', 'last_name' => 'Dent', 'biography' => 'father of 3. son of God.', 'skills' => [
-                ['name' => 'dad', 'description' => 'being a good dad']
-            ]]
-        ]]);
+        $dads = $this->dad_table->getAllDads();
+
+        echo $this->twig->load('dad_selection.twig')->render(['dads' => $dads]);
     }
 }
