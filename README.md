@@ -68,12 +68,18 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] view & model communication (controller)
         * [x] session data
-    * [ ] available services
-        * [ ] view
+    * [ ] dad selection
+        * [x] view
         * [ ] authentication
         * [ ] model
         * [ ] routing
         * [ ] view & model communication (controller)
+    * [ ] set appointment
+        * [ ] view
+        * [ ] authentication
+        * [ ] model
+        * [ ] routing
+        * [ ] controller
     * [ ] services review
         * [ ] view
         * [ ] authentication
@@ -84,7 +90,20 @@ We want to make sure your dad is a perfect match.
     * [x] enforce https
     * [x] password encryption
 * [x] path
-* [ ] session
+* [x] session
     * [x] start on load
-    * [ ] clear on logout
+    * [x] clear on logout
 * [ ] functions properly in any subfolder of htdocs
+* [ ] style design
+
+## Stretch
+* [x] personalized greeting
+* [ ] 403 Unauthorized
+* [ ] filter dads by skill
+* [ ] client phone #
+* [ ] interests
+    * [ ] client preferences
+    * [ ] filter dads
+* [ ] user preferred site style
+* [ ] account settings
+* [ ] admin login
