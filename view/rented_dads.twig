@@ -1,0 +1,11 @@
+{% extends 'shared/generic.twig' %}
+
+{% block title 'Rent-A-Dad :: My Dads' %}
+
+{% block content %}
+    <h2>My Dads</h2>
+
+    <p>This is the list of dads you currently have rented on your account</p>
+
+    {% include 'components/rented_dads_table.twig' %}
+{% endblock %}

@@ -9,3 +9,12 @@
 .error {
     color: red;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: thin solid lightslategray;
+    padding: 0.5rem;
+}

@@ -1,0 +1,29 @@
+{% if dads is defined and dads is not empty %}
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for dad in dads %}
+				<tr>
+					<td>
+						{{ dad.first_name|e }}
+						{{ dad.last_name|e }}
+					</td>
+					<td>
+						{{ dad.start_time|e }}
+					</td>
+					<td>
+						{{ dad.end_time|e }}
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>You currently do not have any dads on your account.</p>
+{% endif %}

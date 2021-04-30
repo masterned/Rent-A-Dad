@@ -60,6 +60,7 @@ class Controller
             'Logout' => $this->logoutUser(),
             'Show Dad Selection' => $this->showDadSelection(),
             'Rent This Dad' => $this->rentDad(),
+            'My Dads' => $this->showRentedDadsPage(),
             default => $this->showHomePage()
         };
     }
@@ -208,5 +209,26 @@ class Controller
 
     private function rentDad()
     {
+    }
+
+    private function showRentedDadsPage()
+    {
+        if (!isset($_SESSION) || !isset($_SESSION['is_valid_user'])) {
+            echo 'You do not have access...';
+            $this->showHomePage();
+            return;
+        }
+
+        $client_id = $this->client_table->getIDViaUsername($_SESSION['username']);
+
+        if (!$client_id) {
+            echo 'Something is wrong with your account?';
+            $this->showHomePage();
+            return;
+        }
+
+        $dads = $this->client_table->getClientDads($client_id);
+
+        echo $this->twig->load('rented_dads.twig')->render(['dads' => $dads]);
     }
 }
