@@ -46,18 +46,28 @@ class Controller
     {
         match ($this->action) {
             'Home' => $this->showHomePage(),
+            'Returning Home' => $this->showHomePage('returning'),
+            'Welcome Home' => $this->showHomePage('welcome'),
+            'Logout Home' => $this->showHomePage('logout'),
             'Show Registration' => $this->showRegistrationPage(),
             'Register' => $this->registerClient(),
             'Show Login' => $this->showLoginPage(),
             'Login' => $this->loginClient(),
+            'Logout' => $this->logoutUser(),
             default => $this->showHomePage()
         };
     }
 
 
-    private function showHomePage()
+    private function showHomePage($version = '')
     {
-        echo $this->twig->load('home.twig')->render();
+        $first_name = null;
+
+        if (isset($_SESSION['username'])) {
+            $first_name = $this->client_table->getFirstNameViaUsername($_SESSION['username']);
+        }
+
+        echo $this->twig->load('home.twig')->render(['version' => $version, 'first_name' => $first_name]);
     }
 
     private function showRegistrationPage(
@@ -166,10 +176,20 @@ class Controller
             $_SESSION['is_valid_user'] = true;
             $_SESSION['username'] = $username->value;
 
-            header("Location: .?action=Home");
+            header("Location: .?action=Returning Home");
             return;
         }
 
         $this->showLoginPage($username, $password, $login_error);
+    }
+
+    private function logoutUser()
+    {
+        $_SESSION = [];
+        $this->twig->addGlobal('session', $_SESSION);
+
+        session_destroy();
+
+        header("Location: .?action=Logout Home");
     }
 }

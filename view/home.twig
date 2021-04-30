@@ -3,6 +3,23 @@
 {% block title 'Rent-A-Dad :: Home' %}
 
 {% block content %}
+
+    {% if version is defined and first_name is defined %}
+        {% if version == 'welcome' %}
+            <h2>Welcome to the family!</h2>
+
+            <p>We're glad to see you here, {{ first_name }}. We hope to make you feel at home here at Rent-A-Dad, and it looks like you've alreay made it here to our home (page).</p>
+        {% elseif version == 'returning' %}
+            <h2>Welcome back, {{ first_name }}!</h2>
+
+            <p>Glad to see you've returned! Let us know if you need anything.</p>
+        {% elseif version == 'logout' %}
+            <h2>Hate to see you go.</h2>
+
+            <p>We look forward to seeing you next time!</p>
+        {% endif %}
+    {% endif %}
+
 	<h2>Who are we?</h2>
 
 	<p>Ever have a man in your life that captures the essence of what it means to be "dad"?</p>
@@ -13,40 +30,24 @@
 		<li>He's probably the one who taught you sports, grilling, and hunting.</li>
 	</ul>
 
-	<p>
-		Everyone needs a good dad in their life.
-        Even if you already have an awesome dad, he can't always be there.
-        Even when he's not there, problems still come up, and a dad would be the best solution.
-	</p>
+	<p>Everyone needs a good dad in their life. Even if you already have an awesome dad, he can't always be there. Even when he's not there, problems still come up, and a dad would be the best solution.</p>
 
-	<p>
-		Why not rent one for a while?
-        Even if Dad is there, one dad is great, imagine having another!
-        Let Dad have a dad of his own.
-	</p>
+	<p>Why not rent one for a while? Even if Dad is there, one dad is great, imagine having another! Let Dad have a dad of his own.</p>
 
-    <div>
-        <span>We offer dads that:<span>
-        <ul>
-            <li>coach</li>
-            <li>repair</li>
+	<div>
+		<span>We offer dads that:<span>
+		<ul>
+			<li>coach</li>
+			<li>repair</li>
             <li>build</li>
             <li>tutor</li>
             <li>and so much more!</li>
         </ul>
     </div>
 
-    <p>
-        Need to give your kid that awkward talk?
-        We have dads that can do that too.
-    </p>
+    <p>Need to give your kid that awkward talk? We have dads that can do that too.</p>
 
-    <p>
-        Our dad's go through a meticulous vetting process to guarantee your dad for the day is someone you'd be happy to have as your dad.
-    </p>
+    <p>Our dad's go through a meticulous vetting process to guarantee your dad for the day is someone you'd be happy to have as your dad.</p>
 
-    <p>
-        We have a long list of dads to choose from and will set up an interview with you and the dad of your choice to be able to get to know him before he starts dad-ing.
-        We want to make sure your dad is a perfect match.
-    </p>
+    <p>We have a long list of dads to choose from and will set up an interview with you and the dad of your choice to be able to get to know him before he starts dad-ing. We want to make sure your dad is a perfect match.</p>
 {% endblock %}
