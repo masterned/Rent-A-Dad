@@ -6,6 +6,22 @@
     border-radius: 12px;
     box-shadow: 2px 2px 2px #cccccc;
     margin: 1rem;
+    background-color: whitesmoke;
+}
+
+.card-title {
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+
+.card * {
+    background-color: whitesmoke;
+}
+
+.card>*,
+.card-body>* {
+    margin-bottom: 10px;
 }
 
 .card table {
@@ -19,4 +35,8 @@
 
 .card th {
     font-weight: normal;
+}
+
+.submit-button {
+    font-size: large;
 }

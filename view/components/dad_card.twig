@@ -3,11 +3,11 @@
 {% block card_title %}{{ dad.first_name|e }} {{ dad.last_name|e }}{% endblock %}
 
 {% block card_body %}
-    <article>{{ dad.biography|e }}</article>
+    <div>{{ dad.biography|e }}</div>
 
-    <aside>
-        <section>
-            <header>Skills</header>
+    <div>
+        <div>
+            <div class="title">Skills</div>
             
             <table>
                 <thead>
@@ -27,15 +27,15 @@
                     {% endfor %}
                 </tbody>
             </table>
-        </section>
-    </aside>
+        </div>
+    </div>
 {% endblock %}
 
 {% block card_footer %}
     {% if session.is_valid_user is defined %}
         <form action="." method="post">
             <input type="hidden" name="dad_id" value="{{ dad.id }}">
-            <input type="submit" name="action" value="Rent This Dad">
+            <input class="submit-button" type="submit" name="action" value="Rent This Dad">
         </form>
     {% endif %}
 {% endblock %}

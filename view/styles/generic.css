@@ -1,9 +1,31 @@
+html {
+    font-family: 'Didot', serif;
+    background-image: url('../../assets/blueOxford_texture.jpg');    
+}
+
+header {
+    background-color: white;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    min-width: max-content;
+}
+
+main {
+    margin: auto 20px;
+    padding: 10px 20px;
+    min-width: min-content;
+    font-size: large;
+    background-color: white;
+}
+
 #page-footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
+    background-color: white;
+    height: min-content;
 }
 
 .error {
@@ -14,7 +36,51 @@ table {
     border-collapse: collapse;
 }
 
-table th, table td {
+table th,
+table td {
     border: thin solid lightslategray;
     padding: 0.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+nav li {
+    min-width: max-content;
+    width: max-content;
+}
+
+nav a {
+    border: thin solid gray;
+    border-radius: 4px;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:visited,
+nav a:active {
+    color: black;
+}
+
+nav a:hover {
+    background-color: lightgray;
+}
+
+form {
+    display: grid;
+    grid-template-columns: max-content min-content;
+}
+
+label {
+    margin-right: 20px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: larger;
 }
