@@ -41,7 +41,7 @@ class Controller
         $this->db = new Database();
         if (!$this->db->isConnected()) {
             $error_message = $this->db->getErrorMessage();
-            echo $this->twig->load('database_error.twig')->render(['error_message' => $error_message]);
+            echo $this->twig->load('errors/database.twig')->render(['error_message' => $error_message]);
             exit();
         }
     }
@@ -62,7 +62,8 @@ class Controller
             'Rent This Dad' => $this->showAppointmentPage(),
             'Set Appointment' => $this->setAppointment(),
             'My Dads' => $this->showRentedDadsPage(),
-            'Unauthorized' => $this->showUnauthorizedPage(),
+            'Unauthorized' => $this->showUnauthorizedErrorPage(),
+            'Authorized Error' => $this->showAuthorizedErrorPage(),
             default => $this->showHomePage()
         };
     }
@@ -87,6 +88,11 @@ class Controller
         $last_name = null,
         $email = null
     ) {
+        if (isset($_SESSION['is_valid_user']) && $_SESSION['is_valid_user']) {
+            header('Location: .?action=Authorized Error');
+            return;
+        }
+
         echo $this->twig->load('registration.twig')->render(['fields' => [
             $username ?? new Field('username'),
             $password ?? new Field('password', 'password'),
@@ -160,6 +166,11 @@ class Controller
 
     private function showLoginPage($username = null, $password = null, $login_error = '')
     {
+        if (isset($_SESSION['is_valid_user']) && $_SESSION['is_valid_user']) {
+            header('Location: .?action=Authorized Error');
+            return;
+        }
+
         echo $this->twig->load('login.twig')->render(['fields' => [
             $username ?? new Field('username'),
             $password ?? new Field('password', 'password')
@@ -252,8 +263,13 @@ class Controller
         echo $this->twig->load('rented_dads.twig')->render(['dads' => $dads]);
     }
 
-    private function showUnauthorizedPage()
+    private function showUnauthorizedErrorPage()
     {
-        echo $this->twig->load('unauthorized.twig')->render();
+        echo $this->twig->load('errors/unauthorized.twig')->render();
+    }
+
+    private function showAuthorizedErrorPage()
+    {
+        echo $this->twig->load('errors/authorized.twig')->render();
     }
 }
