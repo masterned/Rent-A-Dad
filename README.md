@@ -38,12 +38,12 @@ We have a long list of dads to choose from and will set up an interview with you
 We want to make sure your dad is a perfect match.
 
 ## TODO
-* [ ] db
-    * [ ] creation script
+* [x] db
+    * [x] creation script
         * [x] tables
         * [x] data
         * [x] credentials
-        * [ ] working login
+        * [x] working login
     * [x] utility class
     * [x] controller connection
     * [x] error message display

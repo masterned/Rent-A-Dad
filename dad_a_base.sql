@@ -63,8 +63,8 @@ CREATE TABLE `dad_has_skill`
 
 -- Insert data
 INSERT INTO `client` VALUES
-(1, 'TestUsername', 'TestPassword', 'Test'   , 'User', 'test@test.com'),
-(2, 'InvalidUser' , 'NotEncrypted', 'Invalid', 'User', 'invalid@test.com');
+(1, 'wolfie', '$2y$10$PiKNpHThbiRwSKL16gjtYO7XtvhaP7qjlIE.kz8gqLS44RPw4Je86', 'UWG', 'Wolfie', 'test@westga.edu'),
+(2, 'sd00070', '$2y$10$xkw45v0Q0mtjDgDR7HDJhOVPdrXQRiyU48bWjO1Rvz.h0z7wHYMny', 'Spencer', 'Dent', 'sd00070@my.westga.edu');
 
 INSERT INTO `dad` VALUES
 (1, 'Michael', 'McMichaels', 52, 'Father of 3. Will treat your children like his own', 4.5),
@@ -82,8 +82,8 @@ INSERT INTO `skill` VALUES
 
 -- Join data
 INSERT INTO `client_has_dad` VALUES
-(1, 3, '2021-06-18 12:00:00', '2021-06-18 18:00:00'),
-(2, 1, '2021-08-20 00:00:00', '2021-08-22 00:00:00');
+(2, 1, '2021-08-20 00:00:00', '2021-08-22 00:00:00'),
+(2, 3, '2021-06-18 12:00:00', '2021-06-18 18:00:00');
 
 INSERT INTO `dad_has_skill` VALUES
 (1, 1, 4),
