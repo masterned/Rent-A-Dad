@@ -50,7 +50,7 @@ We want to make sure your dad is a perfect match.
     * [x] utility class
     * [x] controller connection
 * [ ] pages
-    * [ ] registration
+    * [x] registration
         * [x] view
         * [x] validation
             * [x] patterns
@@ -59,8 +59,8 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] view & model communication (controller)
         * [x] session data
-        * [ ] un-authorization
-    * [ ] login
+        * [x] un-authorization
+    * [x] login
         * [x] view
         * [x] validation
             * [x] verification
@@ -69,7 +69,7 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] controller
         * [x] session data
-        * [ ] un-authorization
+        * [x] un-authorization
     * [x] dad selection
         * [x] view
         * [x] model
@@ -83,9 +83,9 @@ We want to make sure your dad is a perfect match.
         * [x] controller
     * [ ] set appointment
         * [x] view
-        * [ ] authorization
+        * [x] authorization
         * [ ] model
-        * [ ] routing
+        * [x] routing
         * [ ] controller
 * [x] security
     * [x] enforce https
