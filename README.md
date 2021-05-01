@@ -99,7 +99,7 @@ We want to make sure your dad is a perfect match.
 
 ## Stretch Goals
 * [x] personalized greeting
-* [ ] 401 Unauthorized
+* [x] 401 Unauthorized
 * [ ] 418 I'm a teapot
 * [ ] 500 Internal Server Error
 * [ ] filter dads by skill

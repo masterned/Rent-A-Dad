@@ -62,6 +62,7 @@ class Controller
             'Rent This Dad' => $this->showAppointmentPage(),
             'Set Appointment' => $this->setAppointment(),
             'My Dads' => $this->showRentedDadsPage(),
+            'Unauthorized' => $this->showUnauthorizedPage(),
             default => $this->showHomePage()
         };
     }
@@ -226,8 +227,7 @@ class Controller
     private function showRentedDadsPage()
     {
         if (!isset($_SESSION) || !isset($_SESSION['is_valid_user'])) {
-            echo 'You do not have access...';
-            $this->showHomePage();
+            header('Location: .?action=Unauthorized');
             return;
         }
 
@@ -242,5 +242,10 @@ class Controller
         $dads = $this->client_table->getClientDads($client_id);
 
         echo $this->twig->load('rented_dads.twig')->render(['dads' => $dads]);
+    }
+
+    private function showUnauthorizedPage()
+    {
+        echo $this->twig->load('unauthorized.twig')->render();
     }
 }
