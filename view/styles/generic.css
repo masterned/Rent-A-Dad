@@ -73,10 +73,10 @@ nav a:hover {
 
 form {
     display: grid;
-    grid-template-columns: max-content min-content;
+    grid-template-columns: max-content min-content max-content;
 }
 
-label {
+form>* {
     margin-right: 20px;
 }
 

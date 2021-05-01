@@ -2,6 +2,5 @@
 
 <input type="{{ field.type|e }}" name="{{ field.name|e }}" id="{{ field.name|e }}" value="{{ field.value|e }}">
 
-{% if field.error is not empty %}
-	<span class="error">{{ field.error|e }}</span>
-{% endif %}
+<span class="error">{{ field.error|e }}</span>
+
