@@ -7,6 +7,7 @@ require_once 'model/Field.php';
 
 require_once 'model/ClientTable.php';
 require_once 'model/DadTable.php';
+require_once 'model/ClientHasDadTable.php';
 
 class Controller
 {
@@ -16,6 +17,7 @@ class Controller
 
     private $client_table;
     private $dad_table;
+    private $client_has_dad_table;
 
     public function __construct()
     {
@@ -31,6 +33,7 @@ class Controller
         $this->connectToDatabase();
         $this->client_table = new ClientTable($this->db->getDB());
         $this->dad_table = new DadTable($this->db->getDB());
+        $this->client_has_dad_table = new ClientHasDadTable($this->db->getDB());
 
         // get action
         $this->action = Utils::getAction();
@@ -241,6 +244,19 @@ class Controller
 
     private function setAppointment()
     {
+        if (!isset($_SESSION['is_valid_user'])) {
+            header('Location: .?action=Unauthorized');
+            return;
+        }
+
+        $client_id = $this->client_table->getIDViaUsername($_SESSION['username']);
+        $dad_id = filter_input(INPUT_POST, 'dad_id');
+        $start_time = Utils::formatTime(filter_input(INPUT_POST, 'start_time'));
+        $end_time = Utils::formatTime(filter_input(INPUT_POST, 'end_time'));
+
+        $this->client_has_dad_table->setAppointment($client_id, $dad_id, $start_time, $end_time);
+
+        $this->showRentedDadsPage();
     }
 
     private function showRentedDadsPage()

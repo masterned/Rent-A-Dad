@@ -26,4 +26,9 @@ class Utils
 
         session_start();
     }
+
+    public static function formatTime($time_string)
+    {
+        return implode(' ', explode('T', $time_string)) . ':00';
+    }
 }
