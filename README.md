@@ -50,7 +50,7 @@ We want to make sure your dad is a perfect match.
     * [x] utility class
     * [x] controller connection
 * [ ] pages
-    * [x] registration
+    * [ ] registration
         * [x] view
         * [x] validation
             * [x] patterns
@@ -59,7 +59,8 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] view & model communication (controller)
         * [x] session data
-    * [x] login
+        * [ ] un-authorization
+    * [ ] login
         * [x] view
         * [x] validation
             * [x] verification
@@ -68,6 +69,7 @@ We want to make sure your dad is a perfect match.
         * [x] routing
         * [x] controller
         * [x] session data
+        * [ ] un-authorization
     * [x] dad selection
         * [x] view
         * [x] model
@@ -75,13 +77,13 @@ We want to make sure your dad is a perfect match.
         * [x] controller
     * [x] review rented dads
         * [x] view
-        * [x] authentication
+        * [x] authorization
         * [x] model
         * [x] routing
         * [x] controller
     * [ ] set appointment
-        * [ ] view
-        * [ ] authentication
+        * [x] view
+        * [ ] authorization
         * [ ] model
         * [ ] routing
         * [ ] controller
@@ -93,7 +95,7 @@ We want to make sure your dad is a perfect match.
     * [x] start on load
     * [x] clear on logout
 * [ ] functions properly in any subfolder of htdocs
-* [ ] site-wide style
+* [x] site-wide style
 
 ## Stretch Goals
 * [x] personalized greeting
@@ -109,3 +111,4 @@ We want to make sure your dad is a perfect match.
 * [ ] account settings
 * [ ] admin login
 * [ ] update appointments
+* [ ] prevent overlapping dad appointments
