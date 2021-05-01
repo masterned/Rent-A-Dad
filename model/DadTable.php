@@ -10,6 +10,18 @@ class DadTable
         $this->db = $db;
     }
 
+    public function getDad($id)
+    {
+        $query = 'SELECT * from `dad` WHERE `id` = :id';
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        $dad = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+
+        return $dad;
+    }
+
     public function getAllDads()
     {
         $query = 'SELECT * FROM `dad`';

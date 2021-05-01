@@ -211,12 +211,20 @@ class Controller
 
     private function showAppointmentPage()
     {
+        if (!isset($_SESSION['is_valid_user'])) {
+            header("Location: .?action=Unauthorized");
+            return;
+        }
+
+        $dad_id = filter_input(INPUT_POST, 'dad_id');
+        $dad = $this->dad_table->getDad($dad_id);
+
         echo $this->twig->load('appointment.twig')->render([
             'fields' => [
                 new Field('start_time', 'datetime-local'),
                 new Field('end_time', 'datetime-local')
-            ], 'dad' => ['first_name' => 'Michael', 'last_name' => 'Dent'],
-            'hidden' => [['name' => 'dad_id', 'value' => '1']]
+            ], 'dad' => $dad,
+            'hidden' => [['name' => 'dad_id', 'value' => $dad_id]]
         ]);
     }
 
