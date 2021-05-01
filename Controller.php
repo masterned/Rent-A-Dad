@@ -223,7 +223,7 @@ class Controller
         echo $this->twig->load('dad_selection.twig')->render(['dads' => $dads]);
     }
 
-    private function showAppointmentPage()
+    private function showAppointmentPage($start_time_field = null, $end_time_field = null)
     {
         if (!isset($_SESSION['is_valid_user'])) {
             header("Location: .?action=Unauthorized");
@@ -235,8 +235,8 @@ class Controller
 
         echo $this->twig->load('appointment.twig')->render([
             'fields' => [
-                new Field('start_time', 'datetime-local'),
-                new Field('end_time', 'datetime-local')
+                $start_time_field ?? new Field('start_time', 'datetime-local'),
+                $end_time_field ?? new Field('end_time', 'datetime-local')
             ], 'dad' => $dad,
             'hidden' => [['name' => 'dad_id', 'value' => $dad_id]]
         ]);
@@ -249,14 +249,27 @@ class Controller
             return;
         }
 
-        $client_id = $this->client_table->getIDViaUsername($_SESSION['username']);
-        $dad_id = filter_input(INPUT_POST, 'dad_id');
-        $start_time = Utils::formatTime(filter_input(INPUT_POST, 'start_time'));
-        $end_time = Utils::formatTime(filter_input(INPUT_POST, 'end_time'));
+        $start_time_field = new Field('start_time', 'datetime-local');
+        $start_time_field->value = filter_input(INPUT_POST, 'start_time');
+        Validator::required($start_time_field);
 
-        $this->client_has_dad_table->setAppointment($client_id, $dad_id, $start_time, $end_time);
+        $end_time_field = new Field('end_time', 'datetime-local');
+        $end_time_field->value = filter_input(INPUT_POST, 'end_time');
+        Validator::required($end_time_field);
 
-        $this->showRentedDadsPage();
+        if (Validator::allValid([$start_time_field, $end_time_field])) {
+            $client_id = $this->client_table->getIDViaUsername($_SESSION['username']);
+            $dad_id = filter_input(INPUT_POST, 'dad_id');
+            $start_time = Utils::formatTime($start_time_field->value);
+            $end_time = Utils::formatTime($end_time_field->value);
+
+            $this->client_has_dad_table->setAppointment($client_id, $dad_id, $start_time, $end_time);
+    
+            $this->showRentedDadsPage();
+            return;
+        }
+
+        $this->showAppointmentPage($start_time_field, $end_time_field);
     }
 
     private function showRentedDadsPage()
