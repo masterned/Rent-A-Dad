@@ -59,7 +59,7 @@ class Controller
             'Login' => $this->loginClient(),
             'Logout' => $this->logoutUser(),
             'Show Dad Selection' => $this->showDadSelection(),
-            'Rent This Dad' => $this->rentDad(),
+            'Rent This Dad' => $this->showAppointmentPage(),
             'My Dads' => $this->showRentedDadsPage(),
             default => $this->showHomePage()
         };
@@ -207,8 +207,14 @@ class Controller
         echo $this->twig->load('dad_selection.twig')->render(['dads' => $dads]);
     }
 
-    private function rentDad()
+    private function showAppointmentPage()
     {
+        echo $this->twig->load('appointment.twig')->render(['fields' => [
+            new Field('start_time', 'datetime-local'),
+            new Field('end_time', 'datetime-local')
+        ], 'dad' => ['first_name' => 'Michael', 'last_name' => 'Dent'],
+        'hidden' => [['name' => 'dad_id', 'value' => '1']]
+        ]);
     }
 
     private function showRentedDadsPage()

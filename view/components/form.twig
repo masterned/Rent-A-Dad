@@ -1,4 +1,8 @@
 <form action="." method="POST">
+	{% for item in hidden %}
+		<input type="hidden" name="{{ item.name }}" value="{{ item.value }}">
+	{% endfor %}
+
 	{% for field in fields %}
 		{% include 'components/form_field.twig' %}
 	{% endfor %}

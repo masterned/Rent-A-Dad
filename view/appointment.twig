@@ -1,0 +1,15 @@
+{% extends 'shared/generic.twig' %}
+
+{% block title 'Rent-A-Dad :: Appointment' %}
+
+{% block content %}
+	<h2>Appointment</h2>
+
+	<h3>Dad</h3>
+	<div>{{ dad.first_name}} {{ dad.last_name}}</div>
+
+	<h3>Date &amp; Time</h3>
+	{% set button_value = 'Set Appointment' %}
+
+	{% include 'components/form.twig' %}
+{% endblock %}
