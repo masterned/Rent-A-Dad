@@ -38,11 +38,12 @@ We have a long list of dads to choose from and will set up an interview with you
 We want to make sure your dad is a perfect match.
 
 ## TODO
-* [x] db
-    * [x] creation script
+* [ ] db
+    * [ ] creation script
         * [x] tables
         * [x] data
         * [x] credentials
+        * [ ] working login
     * [x] utility class
     * [x] controller connection
     * [x] error message display
@@ -81,12 +82,15 @@ We want to make sure your dad is a perfect match.
         * [x] model
         * [x] routing
         * [x] controller
-    * [ ] set appointment
+    * [x] set appointment
         * [x] view
         * [x] authorization
-        * [ ] model
+        * [x] validation
+            * [x] verification
+            * [x] feedback
+        * [x] model
         * [x] routing
-        * [ ] controller
+        * [x] controller
 * [x] security
     * [x] enforce https
     * [x] password encryption
@@ -111,4 +115,5 @@ We want to make sure your dad is a perfect match.
 * [ ] account settings
 * [ ] admin login
 * [ ] update appointments
+* [ ] delete appointments
 * [ ] prevent overlapping dad appointments
