@@ -8,6 +8,9 @@ Also, please make sure your SQL database is up to date.
 I had been running into a weird bug before I updated mine,
 and updating it seems to have fixed it.
 
+In order to log in, I would use the username: `wolfie` with the password: `GoWolves#1`.
+I would also create an account for yourself.
+
 ## Who are we?
 Ever have a man in your life that captures the essence of what it means to be "dad"?
 
