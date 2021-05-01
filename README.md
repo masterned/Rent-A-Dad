@@ -50,7 +50,7 @@ We want to make sure your dad is a perfect match.
 * [x] validator
     * [x] utility class
     * [x] controller connection
-* [ ] pages
+* [x] pages
     * [x] registration
         * [x] view
         * [x] validation
@@ -103,17 +103,20 @@ We want to make sure your dad is a perfect match.
 
 ## Stretch Goals
 * [x] personalized greeting
-* [x] 401 Unauthorized
-* [ ] 418 I'm a teapot
+* [x] 401 Unauthorized & -401 Authorized Error
+* [ ] prevent overlapping dad appointments
+* [ ] delete appointments
+* [ ] update appointments
+* [ ] account settings
 * [ ] 500 Internal Server Error
 * [ ] filter dads by skill
 * [ ] client phone #
+    * [ ] db
+    * [ ] validation
+    * [ ] view
+    * [ ] controller
 * [ ] interests
     * [ ] client preferences
     * [ ] filter dads
 * [ ] user preferred site style
-* [ ] account settings
 * [ ] admin login
-* [ ] update appointments
-* [ ] delete appointments
-* [ ] prevent overlapping dad appointments
